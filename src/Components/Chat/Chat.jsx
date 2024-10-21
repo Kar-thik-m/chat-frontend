@@ -19,7 +19,7 @@ const Chat = () => {
 
     useEffect(() => {
         dispatch(Idbyprofile(id));
-        const newSocket = io('http://localhost:4000', {
+        const newSocket = io('https://chat-backend-aiqe.onrender.com', {
             transports: ['websocket'],
         });
 

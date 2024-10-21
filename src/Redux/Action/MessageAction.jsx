@@ -21,7 +21,7 @@ export const UserChat = (id) => async (dispatch) => {
         }
 
         const data = await response.json();
-        console.log(data);
+      
         dispatch(chatByIdSuccess(data));
     } catch (err) {
         dispatch(chatByIdFail(err));
