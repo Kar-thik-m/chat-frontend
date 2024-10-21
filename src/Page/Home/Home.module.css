@@ -1,0 +1,19 @@
+.homeContainer {
+    display: flex;
+    height: 100vh; /* Full height for the viewport */
+}
+
+.sidebar {
+    width: 300px; /* Width of the sidebar */
+    background-color: #fff; /* White background for sidebar */
+    border-right: 1px solid #ccc; /* Border to separate sidebar */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.chat {
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5; /* Light gray background for chat area */
+}
+
