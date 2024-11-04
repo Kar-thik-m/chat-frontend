@@ -14,10 +14,7 @@ const Nav = () => {
         setLoading(true);
         localStorage.removeItem('user');
 
-        // Simulate an asynchronous operation
-        await new Promise((resolve) => {
-            setTimeout(resolve, 100); // Simulated delay (can be removed if not needed)
-        });
+        
 
         setLoading(false);
         navigate("/login");
@@ -25,7 +22,8 @@ const Nav = () => {
 
     return (
         <div className={NavStyle.navContainer}>
-            <Link className={NavStyle.logo} to={'/'}>Chat-App</Link>
+            <Link className={NavStyle.logo} to={'/'}>Tal_To_Me</Link>
+            <img src=""/>
             <div className={NavStyle.profile}>
                 {loading ? (
                     <Box display="flex" alignItems="center">
