@@ -1,0 +1,36 @@
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #61dafb;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.editProfile {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.editProfile:hover {
+    color: #0056b3;
+}
