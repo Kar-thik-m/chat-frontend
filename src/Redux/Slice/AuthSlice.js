@@ -12,6 +12,7 @@ const authSlice = createSlice({
         Chatbyid: null,
         searchResults: null,
         onlineUsers: null,
+        notification: [],
 
     },
     reducers: {
@@ -128,8 +129,20 @@ const authSlice = createSlice({
         },
         setOnlineUsers(state, action) {
             state.onlineUsers = action.payload;
-        }
+        },
+        addNotification(state, action) {
+            state.notification.push(action.payload);
+        },
+        clearNotification: (state, action) => {
+            state.notification = state.notification.filter(
+                (notification) => notification.senderId !== action.payload
+            );
+        },
+        clearAllNotifications: (state) => {
+            state.notification = [];
+        },
     }
+
 });
 
 const { actions, reducer } = authSlice;
@@ -158,7 +171,10 @@ export const {
     searchRequest,
     searchSuccess,
     clearSearchResults,
-    setOnlineUsers
+    setOnlineUsers,
+    addNotification,
+    clearAllNotifications,
+    clearNotification
 
 } = actions;
 

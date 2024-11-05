@@ -3,6 +3,7 @@ import { Url } from '../../config';
 import { io } from 'socket.io-client';
 import { setOnlineUsers } from '../Redux/Slice/AuthSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { addNotification } from '../Redux/Slice/AuthSlice';
 const SocketContext = createContext();
 
 
@@ -24,6 +25,12 @@ export const SocketProvider = ({ children }) => {
 
             newSocket.on('getOnlineUsers', (onlineUsers) => {
                 dispatch(setOnlineUsers(onlineUsers));
+            });
+
+            newSocket.on('notification', ({ senderId, userinfo }) => {
+                console.log("noti", senderId, userinfo)
+                dispatch(addNotification({ senderId, userinfo }));
+
             });
 
             return () => {

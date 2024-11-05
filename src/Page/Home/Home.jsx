@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import HomeStyle from "./Home.module.css";
 import { Loaduser, allprofile } from '../../Redux/Action/AuthAction';
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import Sidebar from '../../Components/Sidebar.jsx/Sidebar';
 import { useDispatch } from 'react-redux';
 import Chat from '../../Components/Chat/Chat';
 

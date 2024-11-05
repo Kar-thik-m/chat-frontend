@@ -1,8 +1,9 @@
+
 import { Url } from "../../../config";
 import {
     registerFail, registerRequest, registerSuccess, loginRequest, loginSuccess, loginFail, loadUserFail, loadUserRequest, loadUserSuccess,
     allProfileFail, allProfileRequest, allProfileSuccess, idbyProfileFail, idbyProfileSuccess, idbyRequest,
-    updateProfileFail,updateProfileRequest,updateProfileSuccess,searchFail,searchRequest,searchSuccess
+    updateProfileFail, updateProfileRequest, updateProfileSuccess, searchFail, searchRequest, searchSuccess
 
 } from "../Slice/AuthSlice";
 
@@ -11,7 +12,7 @@ export const register = (userData) => async (dispatch) => {
     console.log(userData)
 
     try {
-        const response = await fetch(`http://localhost:4000/user/register`, {
+        const response = await fetch(`${Url}/user/register`, {
             method: 'POST',
 
             body: userData,
@@ -42,7 +43,7 @@ export const register = (userData) => async (dispatch) => {
 
 export const LoginApi = (userData) => async (dispatch) => {
     dispatch(loginRequest());
-    console.log(userData)
+    
     try {
         const response = await fetch(`${Url}/user/login`, {
             method: 'POST',
@@ -174,7 +175,7 @@ export const updateProfile = (userData, id) => async (dispatch) => {
         if (userData.file) {
             formData.append('file', userData.file);
         }
-        
+
         const response = await fetch(`${Url}/user/updateprofile/${id}`, {
             method: 'PUT',
             headers: {
@@ -207,7 +208,7 @@ export const UserSearch = (searchTerm) => async (dispatch) => {
             throw new Error('User not authenticated');
         }
         const token = user.token;
-        const response = await fetch(`${Url}user/search?query=${(searchTerm)}`, {
+        const response = await fetch(`${Url}/user/search?query=${searchTerm}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

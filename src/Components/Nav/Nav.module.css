@@ -3,45 +3,90 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #2c3e50;
-    color: white;
-}
-
-.logo {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
     font-size: 24px;
     font-weight: bold;
+    color: #333;
     text-decoration: none;
-    color: white;
-}
-
-.profile {
+  }
+  
+  .profile {
     display: flex;
     align-items: center;
-}
-
-.navItem {
-    margin-right: 15px;
+  }
+  
+  .notificationContainer {
+    position: relative;
     cursor: pointer;
-    transition: color 0.3s;
-}
-
-.navItem:hover {
-    color: #61dafb;
-}
-
-.linkprofile {
-    display: flex;
-    align-items: center;
-}
-
-.profilePic {
-    width: 40px;
-    height: 40px;
+    margin-right: 20px;
+  }
+  
+  .notificationCount {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    border: 2px solid white;
-    transition: transform 0.3s;
-}
-
-.profilePic:hover {
-    transform: scale(1.1);
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navItem {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .linkProfile {
+    display: inline-block;
+  }
+  
+  .profilePic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .openside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .closesid {
+    display: none;
+  }
+  
+  .sidebarCloseButton {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  

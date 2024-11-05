@@ -7,8 +7,9 @@ const store = configureStore({
   reducer: {
     user: userReducer,
     message: messageReducer,
-   
+
   },
+
 });
 
 export default store;

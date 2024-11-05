@@ -9,7 +9,7 @@ import useRealTimeMessages from "../Chat/userGetRealTimeMessage.jsx";
 const Chat = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user?.loaduser);
-    const onlineUsers = useSelector(state => state.user?.onlineUsers) || []; // Ensure it's an array
+    const onlineUsers = useSelector(state => state.user?.onlineUsers) || [];
     const Chatbyid = useSelector((state) => state?.message?.chatById);
     const idbyprofile = useSelector((state) => state?.user?.IdByProfile);
     const [input, setInput] = useState('');
@@ -27,6 +27,13 @@ const Chat = () => {
             receiverId: idbyprofile?._id,
         };
         dispatch(postMessage(idbyprofile?._id, messageData));
+        if (socket) {
+            socket.emit('sendNotification', {
+                receiverId: idbyprofile?._id,
+                userinfo: `New message from ${user?.username}: ${input}`,
+            });
+            
+        }
         setInput('');
     };
 
@@ -61,7 +68,7 @@ const Chat = () => {
                             </div>
                         ))
                     ) : (
-                        <div style={{display:"flex",justifyContent:"center",alignItems:"center",}}>Welcome TO ChatApp </div>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", }}>Welcome TO ChatApp </div>
                     )}
                     <div ref={messagesEndRef} />
                 </div>

@@ -1,1 +1,3 @@
-export const Url='https://chat-backend-aiqe.onrender.com'
+export const Url = import.meta.env.VITE_API_URL;
+
+
